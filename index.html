@@ -6,60 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Umar Ijaz</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="bootstrap.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+      $(window).on("load",function(){
+        $(".preloader").addClass("complete")
+      })
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="Icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&family=Montserrat:wght@200&family=Sacramento&display=swap" rel="stylesheet">
-</head>
+    
+  </div>
+  </head>
 <body>
- <header>
-  <div class="top">
+ 
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
+
+<section class="section-1">
+    <header>
+     <h2 class="logo">UMAR IJAZ</h2>
+      <nav class="header">
+        <ul class="sidenav">
+       <li class="links"><a href="#top"  id="nav1">Home</a></li>
+       <li class="links"><a href="#skills"  id="nav2">Skills</a></li>
+       <li class="links"><a href="#bottom"  id="nav3">Contact</a></li>
+      </ul>
+      </nav>
+    </header>
+  </section>
+ 
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function(){
+      $(window).on("scroll" , function(){
+        if ($(window).scrollTop()) {
+            $("header").addClass("bgc");
+        }else{
+            $("header").removeClass("bgc");
+        }
+      });
+    });
+  </script>
+
+  
+
+  <section id="top">
+     
     <h1 class="Umar">I'm Umar.</h1>
-    <p class="web">A Web Developer</p>
+    <p class="web">A <span class="multitext"> </span></p>
     <img class="mountain" src="mountain..png" height="350px" width="1000px">
     <img class="cloud1" src="cloud.png">
     <img class="cloud2" src="cloud.png">
-    </div>
+  </section>
     
-        <div class="profile">
+  <section class="profile">
           <img class= "id" src="id.png" height="200px" width="200px">
           <h2 class="sub-titles">Hello.</h2>
           <p class="midtxt"> I am a Web Developer with knowledge of major programming languages and a creative programmer who loves to deal with problem solving.
             You can depend on me with any task as I am great at time management.</p>
-        </div>
-        <div class="middle">
+  </section>
+
+
+        
+   <section class="middle">
         <hr class="dot1" size="20px">
-        <div class="skills">
+        <section id="skills">
           <center><h2 class="sub-titles">My Skills.</h2></center>
-          <div class="skill-row">
+          <div class="skill-row" data-aos="fade-up">
             <img class="prog" src="prog.png" alt="">
             <h3 class="dsgn">Design and Development</h3>
             <p> I am always energetic and eager to learn new skills and Web Development being one of the hardest skill. It got my attention and I was not able to learn it but master it.</p>
-          </div>
-          <div class="middle.2">
+          </section>
+          <section class="middle.2" data-aos="fade-up">
             <img class="edit" src="premierepro.png" alt="">
             <h3 class="edittxt">Photo & Video Editing</h3>
             <p>I have always admired the art of modification, it being the reason for me to learn this skill. I am always coming up with innovative ideas and even though I take my work seriously, I do have a good sense of humour.</p>
-        </div>
-        <hr class="dot2">
-        <div class="bottom">
+          </section>
+      </section>
+        <section id="bottom">
+          <hr class="dot2">
           <center><h2 class="touch">Get In Touch</h2></center>
           <center><h3>Let's work together!</h3></center>
           <p class="under-touch">Love Coding as much as I do? Lets talk about our future next project and build experience by working as a team !</p>
           <center><a class="btn" href="mailto:umarijaz20006@gmail.com">CONTACT ME</a></center>
-        </div>
-      </div>
+        </section>
+        
       
-     </div>
-      <div class="bottom2">
+      </section>
+      <section class="bottom2">
         <a class="footer-link" href="https://www.behance.net/ranaumar18">Behance</a>
         <a class="footer-link" href="https://twitter.com/Rbumar1">Twitter</a>
         <a class="footer-link" href="https://instagram.com/umar_ijaz123">Instagram</a>
         <p class="surname">Copyright© 2023 Umar Ijaz.</p>
-      </div>
-     </div>
-      
-      
+      </section>
+    </section>
+  
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      offset : 146
+    });
+  </script>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typingEffect = new Typed(".multitext",{
+      strings : ["man","Web Developer","Coder","Designer","Programmer"],
+      loop : true,
+      typeSpeed : 100,
+      backSpeed : 100,
+      backDelay : 1200
+    })
+  </script>
 </body>
 </html>
