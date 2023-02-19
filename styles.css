@@ -81,6 +81,9 @@ h3{
     top: 130px;
     left: 500px;
     font-size: 70px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: moveup 0.5s linear forwards;
 }
 
 .sub-titles{
@@ -94,9 +97,20 @@ h3{
   top: 199px ;
   left: 570px;
   font-size: 20px;
+  opacity: 0;
+    transform: translateY(10px);
+    animation: moveup 1s linear forwards;
 }
 
-.top{ 
+@keyframes moveup {
+  100%{
+    opacity: 1;
+    transform: translateY(20px);
+  }
+  
+}
+
+#top{ 
   background-color: rgb(239, 245, 245);
   padding: 20px;
   height: 570px;
@@ -162,9 +176,13 @@ h3{
 }
 
 .under-touch{
-  width: 80%;
+  width: 50%;
   margin: 40px auto 60px;
   text-align: center;
+}
+
+.header{
+  padding-top: 0;
 }
 
 .line{
@@ -202,4 +220,252 @@ h3{
   color: rgb(214, 228, 229);
   padding: 20px 0;
   font-size: 0.9em;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+header{
+  display: flex;
+  padding: 30px;
+  align-items:center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: 500ms;
+  padding-left: 0;
+  padding-top: 40px;
+  height: 40px;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: movedown 1.4s linear forwards;
+}
+
+
+@keyframes movedown {
+  100%{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  
+}
+.bgc{
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.bgc .logo{
+  color: #000;
+}
+
+.bgc a {
+  color: black;
+}
+
+.bgc nav a:hover{
+  border-color: #12b7fd;
+  transition: 500ms;
+}
+
+nav{
+  margin-right: 70px;
+}
+
+nav a {
+  display: inline-block;
+  margin-left: 30px;
+  font-size: 15px;
+  text-decoration: none;
+  font-family: sans-serif;
+  color: rgb(235, 100, 64);
+  text-transform: uppercase;
+  border-bottom: 3px solid transparent;
+  padding: 10px 1px;
+  transition: 500ms;
+}
+
+nav{
+  margin-left: 700px;
+}
+
+nav a:hover{
+border-color: rgb(88, 183, 192);
+}
+
+.logo{
+  color: rgb(66, 65, 65);
+  font-family: sans-serif;
+  margin-left: 50px;
+}
+
+header nav a.active{
+  background-color: blue;
+}
+
+
+@media (max-width: 769px){
+  header{
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  nav{
+    padding: 15px;
+    margin: 0;
+  }
+}
+.active{
+  background-color: red;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+}
+
+.skills{
+  display: flex;
+}
+
+.top{
+  display: flex;
+}
+
+.bottom{
+  display: flex;
+}
+
+:root{
+  --gradient: linear-gradient(
+    45deg,
+    #db9554,
+    #e26b54,
+    #ff9671,
+    #fdcd75
+  );
+}
+
+.Umar{
+  background-image: var(--gradient);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 400%;
+}
+
+.preloader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  transition: 1s;
+}
+
+.preloader:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #000;
+  transition: 1s;
+}
+
+.preloader.complete:before{
+  left: -50%;
+}
+
+.preloader:after{
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #000;
+  transition: 1s;
+}
+
+.preloader.complete:after{
+  right: -50%;
+}
+
+.loader{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  border: 3px solid #fff;
+  animation: animate 2s linear infinite;
+  z-index: -1000000;
+}
+
+.loader:before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: '';
+  background: #fff;
+  animation: animateBg 2s linear infinite;
+  z-index: 10;
+}
+
+.preloader.complete{
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@keyframes animate{
+  0%{
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+
+
+  25%{
+    transform: translate(-50%,-50%) rotate(180deg);
+  }
+
+  50%{
+    transform: translate(-50%,-50%) rotate(180deg);
+  }
+
+  75%{
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+
+  100%{
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+}
+
+@keyframes animateBg{
+  0%{
+    height: 0;
+  }
+
+
+  25%{
+    height: 0;
+  }
+
+  50%{
+    height: 100%;
+  }
+
+  75%{
+    height: 100%;
+  }
+
+  100%{
+    height: 0;
+  }
 }
